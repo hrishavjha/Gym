@@ -2,7 +2,6 @@
 {% include 'base/base.html' %}
 {% block content %}
     <div class="fh5co-loader"></div>
-
 	<div id="page">
 	<nav class="fh5co-nav" role="navigation">
 		<div class="top-menu">
@@ -24,6 +23,7 @@
                                 <li class="btn-cta"><a href="{% url 'dashboard' %}">{{ users.first_name }}</a></li>
                             {% else %}
                                 <li class="btn-cta"><a href="{% url 'login' %}"><span>Login</span></a></li>
+                                <li class="btn-cta"><a href="{% url 'register' %}"><span>Register</span></a></li>
                             {% endif %}
 						</ul>
 					</div>

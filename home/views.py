@@ -16,21 +16,27 @@ def home_view(request):
 
 
 def about_view(request):
+    user = request.user
     context = {
         'title': 'About',
+        'users': user,
     }
     return render(request, 'home/about.html', context)
 
 
 def work_view(request):
+    user = request.user
     context = {
         'title': 'Work',
+        'users': user,
     }
     return render(request, 'home/work.html', context)
 
 
 def contact_view(request):
+    user = request.user
     context = {
         'title': 'Contact Us',
+        'users': user,
     }
     return render(request, 'home/contact.html', context)

@@ -20,7 +20,12 @@
 								<a href="{% url 'services' %}">Services</a>
 							</li>
 							<li><a href="{% url 'contact' %}">Contact</a></li>
-							<li class="btn-cta"><a href="{% url 'login' %}"><span>Login</span></a></li>
+                            {% if request.user.is_authenticated %}
+                                <li class="btn-cta"><a href="{% url 'dashboard' %}">{{ users.first_name }}</a></li>
+                            {% else %}
+                                <li class="btn-cta"><a href="{% url 'login' %}"><span>Login</span></a></li>
+                                <li class="btn-cta"><a href="{% url 'register' %}"><span>Register</span></a></li>
+                            {% endif %}
 						</ul>
 					</div>
 				</div>
@@ -55,7 +60,7 @@
 		</div>
 		<div class="project-content">
 			<div class="col-forth">
-				<div class="project animate-box" style="background-image:{% static 'images/project-8.jpg' %};">
+				<div class="project animate-box" style="background-image:url({% static 'images/project1.jpg' %});">
 					<a href="#" class="desc">
 						<span>Application</span>
 						<h3>Project Name</h3>
@@ -63,7 +68,7 @@
 				</div>
 			</div>
 			<div class="col-forth">
-				<div class="project animate-box" style="background-image:{% static 'images/project-1.jpg' %};">
+				<div class="project animate-box" style="background-image:url({% static 'images/project2.jpg' %});">
 					<a href="#" class="desc">
 						<span>Application</span>
 						<h3>Project Name</h3>
@@ -71,7 +76,7 @@
 				</div>
 			</div>
 			<div class="col-forth">
-				<div class="project animate-box" style="background-image:{% static 'images/project-2.jpg' %};">
+				<div class="project animate-box" style="background-image:url({% static 'images/project3.jpg' %});">
 					<a href="#" class="desc">
 						<span>Application</span>
 						<h3>Project Name</h3>
@@ -79,7 +84,7 @@
 				</div>
 			</div>
 			<div class="col-forth">
-				<div class="project animate-box" style="background-image:{% static 'images/project-3.jpg' %};">
+				<div class="project animate-box" style="background-image:url({% static 'images/project4.jpg' %});">
 					<a href="#" class="desc">
 						<span>Application</span>
 						<h3>Project Name</h3>
@@ -87,7 +92,7 @@
 				</div>
 			</div>
 			<div class="col-forth">
-				<div class="project animate-box" style="background-image:{% static 'images/project-4.jpg' %};">
+				<div class="project animate-box" style="background-image:url({% static 'images/project5.jpg' %});">
 					<a href="#" class="desc">
 						<span>Application</span>
 						<h3>Project Name</h3>
@@ -95,7 +100,7 @@
 				</div>
 			</div>
 			<div class="col-forth">
-				<div class="project animate-box" style="background-image:{% static 'images/project-5.jpg' %};">
+				<div class="project animate-box" style="background-image:url({% static 'images/project6.jpg' %});">
 					<a href="#" class="desc">
 						<span>Application</span>
 						<h3>Project Name</h3>
@@ -103,7 +108,7 @@
 				</div>
 			</div>
 			<div class="col-forth">
-				<div class="project animate-box" style="background-image:{% static 'images/project-6.jpg' %};">
+				<div class="project animate-box" style="background-image:url({% static 'images/project7.jpg' %});">
 					<a href="#" class="desc">
 						<span>Application</span>
 						<h3>Project Name</h3>
@@ -111,7 +116,7 @@
 				</div>
 			</div>
 			<div class="col-forth">
-				<div class="project animate-box" style="background-image:{% static 'images/project-7.jpg' %};">
+				<div class="project animate-box" style="background-image:url({% static 'images/project8.jpg' %});">
 					<a href="#" class="desc">
 						<span>Application</span>
 						<h3>Project Name</h3>
