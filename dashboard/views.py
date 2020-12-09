@@ -13,4 +13,3 @@ def dash_view(request):
         }
         return render(request, 'dashboard/dash.html', context_one)
     return redirect('/')
-
