@@ -6,6 +6,7 @@ class Service(models.Model):
     price = models.IntegerField(blank=True, null=True)
     des = models.CharField(max_length=500, blank=True, null=True)
     # img = models.ImageField(null=True, blank=True, des="services_img")
+    is_enrolled = models.BooleanField(null=True, blank=True, default=False)
 
     def __str__(self):
         return str(self.name)

@@ -1,4 +1,103 @@
 {% extends 'base/base.html' %}
+{% load static %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'CSS/register.css' %}">
+{% endblock extra_head %}
 {% block content %}
-    Register
-{% endblock %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">GymCounsellor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'work' %}">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'services' %}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}" style="background-color: #5e5e5e; color: #ffffff">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <form action="" method="POST">{% csrf_token %}
+  <div class="container-fluid" style="width:90vw">
+  <div class="row">
+  <div class="col-md-6">
+  <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name">
+  </div>
+  <div class="col-md-6">
+   <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
+</div>
+<div class="row">
+</div>
+<div class="row">
+<div class="col-md-12">
+  <input type="email" class="form-control" id="email" name="username" placeholder="Email Address">
+</div>
+</div>
+      <div class="row">
+<div class="col-md-12">
+  <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
+</div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+  <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+  </div>
+  <div class="col-md-6">
+   <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm Password">
+ </div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="progress">
+  <div class="progress-bar progress-bar-success boja1" style="width: 12.5%">
+
+  </div>
+  <div class="progress-bar progress-bar-warning  boja2" style="width: 12.5%">
+
+  </div>
+  <div class="progress-bar progress-bar-danger boja3" style="width: 12.5%">
+
+  </div>
+  <div class="progress-bar progress-bar-danger boja4" style="width: 12.5%">
+
+  </div>
+  <div class="progress-bar progress-bar-danger boja5" style="width: 12.5%">
+
+  </div>
+  <div class="progress-bar progress-bar-danger boja6" style="width: 12.5%">
+
+  </div>
+  <div class="progress-bar progress-bar-danger boja7" style="width: 12.5%">
+
+  </div>
+  <div class="progress-bar progress-bar-danger boja8" style="width: 12.5%">
+
+  </div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<button type="submit" class="btn btn-primary col-md-12 col-xs-12">Register</button>
+</div>
+</div>
+
+</div>
+  </div>
+    </form>
+
+{% endblock content %}

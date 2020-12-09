@@ -1,0 +1,47 @@
+.container{
+  margin-top:2%;
+}
+.row{
+	margin-bottom:2%;
+}
+.progress{
+		height:5px;
+}
+.progress-bar{
+	height:5px;
+}
+.gray{
+
+	background-color:lightgray;
+}
+.gray:hover {
+	background-color:gray;
+}
+.boja1{
+background-color:olive;
+}
+.boja2{
+background-color:white;
+}
+.boja3{
+background-color:black;
+}
+.boja4{
+background-color:red;
+}
+.boja5{
+background-color:lightyellow;
+}
+.boja6{
+background-color:purple;
+}
+.boja7{
+background-color:lightblue
+}
+.boja8{
+background-color:blue;
+}
+.row .col-md-6 {
+  margin-top:1%;
+
+}

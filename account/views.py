@@ -19,7 +19,7 @@ def login_view(request):
         user = auth.authenticate(username=request.POST['username'], password=request.POST['password'])
         if user is not None:
             auth.login(request, user)
-            return redirect('/services/')
+            return redirect('dashboard')
         else:
             return render(request, "user/login.html", {"error": "Invalid Login Credentials."})
     else:
@@ -41,12 +41,12 @@ def register_view(request):
                 return render(request, 'user/register.html', {'error': 'Username is already taken.'})
             except User.DoesNotExist:
                 user = User.objects.create_user(username=request.POST['username'], password=password,
-                                                email=request.POST['email'], first_name=request.POST['first_name'],
+                                                email=request.POST['username'], first_name=request.POST['first_name'],
                                                 last_name=request.POST['last_name'])
                 ExtendedUser.ph_no = request.POST['phone']
                 user.save()
                 ExtendedUser.save()
-            return redirect('/dashboard/')
+            return redirect('dashboard')
         else:
             return render(request, 'user/register.html', {'error': 'Passwords dont match'})
     else:
