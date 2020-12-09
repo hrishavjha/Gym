@@ -1,9 +1,16 @@
 from django.shortcuts import render
 
+from services.models import Service
+
 
 def home_view(request):
+    service = Service.objects.all()
+    user = request.user
+
     context = {
             'title': 'Home',
+            'users': user,
+            'service': service,
         }
     return render(request, 'home/home.html', context)
 

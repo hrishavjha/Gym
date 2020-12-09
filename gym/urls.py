@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 from django.contrib.auth.views import LogoutView
+from django.conf.urls.static import static
+from django.conf import settings
 
 from services.views import service_view
 from home.views import home_view, about_view, work_view, contact_view
@@ -18,4 +20,4 @@ urlpatterns = [
     path('services/', service_view, name='services'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('dashboard/', dash_view, name='dashboard'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

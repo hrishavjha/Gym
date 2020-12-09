@@ -8,7 +8,7 @@ from .models import ExtendedUser
 
 def login_view(request):
     if request.user.is_authenticated:
-        return redirect('dashboard')
+        return redirect('home')
     context = {
         'title': 'Register',
     }
@@ -19,7 +19,7 @@ def login_view(request):
         user = auth.authenticate(username=request.POST['username'], password=request.POST['password'])
         if user is not None:
             auth.login(request, user)
-            return redirect('dashboard')
+            return redirect('home')
         else:
             return render(request, "user/login.html", {"error": "Invalid Login Credentials."})
     else:
@@ -28,7 +28,7 @@ def login_view(request):
 
 def register_view(request):
     if request.user.is_authenticated:
-        return redirect('dashboard')
+        return redirect('home')
     context = {
         'title': 'Register',
     }
@@ -46,7 +46,7 @@ def register_view(request):
                 ExtendedUser.ph_no = request.POST['phone']
                 user.save()
                 ExtendedUser.save()
-            return redirect('dashboard')
+            return redirect('home')
         else:
             return render(request, 'user/register.html', {'error': 'Passwords dont match'})
     else:
