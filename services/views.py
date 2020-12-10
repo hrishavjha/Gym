@@ -4,9 +4,12 @@ from .models import Service
 
 
 def service_view(request):
-    services = Service.objects.all()
+    service = Service.objects.all()
+    user = request.user
+
     context = {
         'title': 'Services',
-        'services': services
+        'users': user,
+        'services': service,
     }
     return render(request, 'services/service.html', context)
