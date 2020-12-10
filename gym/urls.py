@@ -8,6 +8,7 @@ from services.views import service_view
 from home.views import home_view, about_view, work_view, contact_view
 from account.views import login_view, register_view
 from dashboard.views import dash_view
+from products.views import prod_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -20,4 +21,5 @@ urlpatterns = [
     path('services/', service_view, name='services'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('dashboard/', dash_view, name='dashboard'),
+    path('product/<prod_id>', prod_view, name='prod_detail'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

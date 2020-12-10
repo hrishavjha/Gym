@@ -60,12 +60,12 @@
 			{% for s in service %}
                 <div class="col-forth">
                     <div class="project animate-box" style="background-image: url({% static 'images/project1.jpg'    %})">
-                        <a href="#" class="desc">
+                        <a href="{% url 'prod_detail' s.id %}" class="desc">
                             <span>{{ s.des }}</span>
                             <h3>{{ s.name }}</h3>
                         </a>
                     </div>
-			    </div>
+                </div>
             {% endfor %}
 		</div>
 	</div>
@@ -140,7 +140,6 @@
 					</p>
 				</div>
 			</div>
-
 		</div>
 	</footer>
 	</div>
