@@ -46,19 +46,29 @@
 			</div>
 		</div>
 	</header>
+<div id="fh5co-project">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Our Services</h2>
+				</div>
+			</div>
+		</div>
+	<div class="project-content">
+			{% for s in services %}
+                <div class="col-forth">
+                    <div class="project animate-box" style="background-image: url({% static 'images/project1.jpg'    %})">
+                        <a href="{% url 'prod_detail' s.id %}" class="desc">
+                            <span>{{ s.des }}</span>
+                            <h3>{{ s.name }}</h3>
+							 <h2>₹{{ s.price }}</h2>
+                        </a>
 
-	<div class="container">
-        {% for i in services %}
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">{{ i.name }}</h5>
-                <p class="card-text">{{ i.des }}</p>
-                  <p class="card-text">{{ i.price }}</p>
-                <a href="#" class="card-link">Buy</a>
-              </div>
-            </div>
-        {% endfor %}
-    </div>
+                    </div>
+					<h4><a href="#" class="card-link">Buy Now</a></h4>
+                </div>
+            {% endfor %}
+		</div>
 
 	<div id="fh5co-started">
 		<div class="container">

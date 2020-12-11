@@ -5,11 +5,7 @@
   font-weight: normal;
   font-style: normal;
 }
-/* =======================================================
-*
-* 	Template Style 
-*
-* ======================================================= */
+
 body {
   font-family: "Work Sans", Arial, sans-serif;
   font-weight: 400;
@@ -47,13 +43,13 @@ body {
 }
 
 a {
-  color: #FC5185;
+  color: #A8D0E6;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 a:hover, a:active, a:focus {
-  color: #FC5185;
+  color: #A8D0E6;
   outline: none;
   text-decoration: none;
 }
@@ -71,17 +67,17 @@ h1, h2, h3, h4, h5, h6, figure {
 
 ::-webkit-selection {
   color: #fff;
-  background: #FC5185;
+  background: #A8D0E6;
 }
 
 ::-moz-selection {
   color: #fff;
-  background: #FC5185;
+  background: #A8D0E6;
 }
 
 ::selection {
   color: #fff;
-  background: #FC5185;
+  background: #A8D0E6;
 }
 
 .fh5co-nav {
@@ -95,6 +91,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-nav .top-menu {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #A8D0E6;
   padding: 28px 0;
 }
 .fh5co-nav .top {
@@ -133,7 +130,7 @@ h1, h2, h3, h4, h5, h6, figure {
   font-family: "Work Sans", Arial, sans-serif;
 }
 .fh5co-nav #fh5co-logo a span {
-  color: #FC5185;
+  color: #A8D0E6;
 }
 .fh5co-nav a {
   padding: 5px 10px;
@@ -231,7 +228,7 @@ h1, h2, h3, h4, h5, h6, figure {
   color: #fff;
 }
 .fh5co-nav ul li.btn-cta a span {
-  background: #FC5185;
+  background: #A8D0E6;
   padding: 4px 20px;
   display: -moz-inline-stack;
   display: inline-block;
@@ -344,7 +341,8 @@ h1, h2, h3, h4, h5, h6, figure {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(76, 74, 138, 0.9);
+  background:#FF8F56;
+
 }
 .fh5co-cover > .fh5co-container {
   position: relative;
@@ -445,7 +443,7 @@ h1, h2, h3, h4, h5, h6, figure {
   display: inline-block;
   zoom: 1;
   *display: inline;
-  color: #FC5185;
+  color: #A8D0E6;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -464,12 +462,12 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
 }
 .fh5co-contact-info ul li:before {
-  color: #FC5185;
+  color: #A8D0E6;
   position: absolute;
   left: 0;
   top: .05em;
   font-family: 'icomoon';
-  speak: none;
+  speak-as: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -543,7 +541,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-counter .display-tc .btn,
 .fh5co-cover .display-tc .btn {
   padding: 15px 30px;
-  background: #FC5185 !important;
+  background: #A8D0E6 !important;
   color: #fff;
   border: none !important;
   font-size: 18px;
@@ -551,7 +549,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-header .display-tc .btn:hover,
 #fh5co-counter .display-tc .btn:hover,
 .fh5co-cover .display-tc .btn:hover {
-  background: #FC5185 !important;
+  background: #A8D0E6 !important;
   -webkit-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
   -moz-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
   box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
@@ -631,7 +629,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .feature-center .icon i {
   font-size: 60px;
-  color: #FC5185;
+  color: #A8D0E6;
 }
 .feature-center .icon2 {
   float: left;
@@ -644,7 +642,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .feature-center h3 {
   font-size: 22px;
-  color: #FC5185 !important;
+  color: #A8D0E6 !important;
 }
 
 .project-content {
@@ -655,14 +653,14 @@ h1, h2, h3, h4, h5, h6, figure {
   padding-bottom: 7em;
 }
 .project-content .col-forth {
-  width: 25%;
+  width: 50%;
   float: left;
   padding-left: 10px;
   padding-right: 10px;
 }
 @media screen and (max-width: 1200px) {
   .project-content .col-forth {
-    width: 25%;
+    width: 50%;
   }
 }
 @media screen and (max-width: 992px) {
@@ -672,7 +670,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 @media screen and (max-width: 480px) {
   .project-content .col-forth {
-    width: 100%;
+    width:50%;
   }
 }
 .project-content .col-forth .project {
@@ -769,13 +767,13 @@ h1, h2, h3, h4, h5, h6, figure {
   font-size: 12px;
 }
 @media screen and (max-width: 768px) {
-  .project-content .desc {
+    .desc {
     bottom: 0;
   }
 }
 
 .fhco-cta-block {
-  border: 2px solid #FC5185;
+  border: 2px solid #A8D0E6;
   padding: 30px;
   margin-bottom: 30px;
   float: left;
@@ -784,7 +782,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fhco-cta-block h2 {
   font-size: 20px;
   margin-bottom: 20px;
-  color: #FC5185;
+  color: #A8D0E6;
 }
 .fhco-cta-block p {
   line-height: 1.5;
@@ -841,7 +839,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-testimonial {
-  background: #efefef;
+  background: #f7ede2;
 }
 #fh5co-testimonial .testimony-slide {
   text-align: center;
@@ -894,7 +892,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-started {
-  background: rgba(76, 74, 138, 0.9);
+  background: #F78888;
 }
 #fh5co-started .fh5co-heading {
   margin-bottom: 2em !important;
@@ -936,7 +934,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-started .btn {
   height: 54px;
   border: none !important;
-  background: #FC5185;
+  background: #A8D0E6;
   color: #fff;
   font-size: 16px;
   text-transform: uppercase;
@@ -1050,7 +1048,7 @@ h1, h2, h3, h4, h5, h6, figure {
   position: absolute;
   right: 0px;
   font-family: 'icomoon';
-  speak: none;
+  speak-as: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -1246,9 +1244,9 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .btn-primary {
-  background: #FC5185;
+  background: #A8D0E6;
   color: #fff;
-  border: 2px solid #FC5185;
+  border: 2px solid #A8D0E6;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background: #fc6a97 !important;
@@ -1256,11 +1254,11 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .btn-primary.btn-outline {
   background: transparent;
-  color: #FC5185;
-  border: 2px solid #FC5185;
+  color: #A8D0E6;
+  border: 2px solid #A8D0E6;
 }
 .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
-  background: #FC5185;
+  background: #A8D0E6;
   color: #fff;
 }
 
@@ -1390,7 +1388,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .form-control:active, .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #FC5185;
+  border-color: #A8D0E6;
 }
 
 .row-pb-md {
