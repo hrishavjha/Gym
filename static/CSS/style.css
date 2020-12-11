@@ -6,6 +6,7 @@
   font-style: normal;
 }
 
+
 body {
   font-family: "Work Sans", Arial, sans-serif;
   font-weight: 400;
@@ -43,7 +44,7 @@ body {
 }
 
 a {
-  color: #A8D0E6;
+  color: #F02D3A;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -90,8 +91,8 @@ h1, h2, h3, h4, h5, h6, figure {
   z-index: 1001;
 }
 .fh5co-nav .top-menu {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: #A8D0E6;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
+  background-color: #F02D3A;
   padding: 28px 0;
 }
 .fh5co-nav .top {
@@ -155,14 +156,14 @@ h1, h2, h3, h4, h5, h6, figure {
   font-size: 13px;
   padding: 30px 15px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: #fff;
   letter-spacing: 2px;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 .fh5co-nav ul li a:hover, .fh5co-nav ul li a:focus, .fh5co-nav ul li a:active {
-  color: white;
+  color: #70151B;
 }
 .fh5co-nav ul li.has-dropdown {
   position: relative;
@@ -228,7 +229,7 @@ h1, h2, h3, h4, h5, h6, figure {
   color: #fff;
 }
 .fh5co-nav ul li.btn-cta a span {
-  background: #A8D0E6;
+  background: #70151B;
   padding: 4px 20px;
   display: -moz-inline-stack;
   display: inline-block;
@@ -341,7 +342,7 @@ h1, h2, h3, h4, h5, h6, figure {
   top: 0;
   left: 0;
   right: 0;
-  background:#FF8F56;
+  background:#F02D3A;
 
 }
 .fh5co-cover > .fh5co-container {
@@ -443,7 +444,7 @@ h1, h2, h3, h4, h5, h6, figure {
   display: inline-block;
   zoom: 1;
   *display: inline;
-  color: #A8D0E6;
+  color: #F02D3A;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -516,7 +517,7 @@ h1, h2, h3, h4, h5, h6, figure {
   font-size: 54px;
   line-height: 1.2;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: bold;
 }
 #fh5co-header .display-tc h1 strong,
 #fh5co-counter .display-tc h1 strong,
@@ -541,7 +542,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-counter .display-tc .btn,
 .fh5co-cover .display-tc .btn {
   padding: 15px 30px;
-  background: #A8D0E6 !important;
+  background: #70151B !important;
   color: #fff;
   border: none !important;
   font-size: 18px;
@@ -549,7 +550,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-header .display-tc .btn:hover,
 #fh5co-counter .display-tc .btn:hover,
 .fh5co-cover .display-tc .btn:hover {
-  background: #A8D0E6 !important;
+  background: #000 !important;
   -webkit-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
   -moz-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
   box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
@@ -629,7 +630,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .feature-center .icon i {
   font-size: 60px;
-  color: #A8D0E6;
+  color: #F02D3A;
 }
 .feature-center .icon2 {
   float: left;
@@ -642,7 +643,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .feature-center h3 {
   font-size: 22px;
-  color: #A8D0E6 !important;
+  color: #F02D3A !important;
 }
 
 .project-content {
@@ -697,7 +698,7 @@ h1, h2, h3, h4, h5, h6, figure {
   right: 0;
   content: '';
   z-index: -2;
-  background: rgba(0, 0, 0, 0.3);
+  background: #F02D3A;
   opacity: 0;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
@@ -892,7 +893,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-started {
-  background: #F78888;
+  background: #F02D3A;
 }
 #fh5co-started .fh5co-heading {
   margin-bottom: 2em !important;
@@ -934,7 +935,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-started .btn {
   height: 54px;
   border: none !important;
-  background: #A8D0E6;
+  background: #70151B;
   color: #fff;
   font-size: 16px;
   text-transform: uppercase;
@@ -1249,13 +1250,13 @@ h1, h2, h3, h4, h5, h6, figure {
   border: 2px solid #A8D0E6;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background: #fc6a97 !important;
-  border-color: #fc6a97 !important;
+  background: #70151B !important;
+  border-color: #70151B !important;
 }
 .btn-primary.btn-outline {
   background: transparent;
-  color: #A8D0E6;
-  border: 2px solid #A8D0E6;
+  color: #F02D3A;
+  border: 2px solid #F02D3A;
 }
 .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
   background: #A8D0E6;
