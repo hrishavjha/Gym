@@ -52,7 +52,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="test">
-						<img class="img-responsive" src="{% static 'images/pcos.jpeg' %}" alt="test">
+						<img class="img-responsive" src="../../media/{{ product.img }}" alt="test">
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -62,8 +62,8 @@
 								<span class="icon">
 									<i class="icon-image"></i>
 								</span>
-								<h3>Expert Guidance</h3>
-								<p>Work 1:1 with a Sports Nutritionist. Usually  PhD candidate or Nutritionist to National/Olympic Teams</p>
+								<h3>{{ product.head1 }}</h3>
+								<p>{{ product.desc1 }}</p>
 							</div>
 						</div>
 						<div class="col-md-12 col-sm-12">
@@ -71,8 +71,8 @@
 								<span class="icon">
 									<i class="icon-eye"></i>
 								</span>
-								<h3>Customized Diet Plan</h3>
-								<p>Customized Diet Plan to help you achieve your diet and training goald(lose fat and gain muscle) with very little left to chance</p>
+								<h3>{{ product.head2 }}</h3>
+								<p>{{ product.desc2 }}</p>
 							</div>
 						</div>
 						<div class="col-md-12 col-sm-12">
@@ -80,20 +80,11 @@
 								<span class="icon">
 									<i class="icon-air-play"></i>
 								</span>
-								<h3>Exercise Guidance</h3>
-								<p>Exercise guidance depending on your level will also be suggested by the Nutritionist</p>
+								<h3>{{ product.head3 }}</h3>
+								<p>{{ product.desc3 }}</p>
 							</div>
 						</div>
-						<div class="col-md-12 col-sm-12">
-							<div class="feature-center animate-box" data-animate-effect="fadeIn">
-								<span class="icon">
-									<i class="icon-moon"></i>
-								</span>
-								<h3>Coach Interaction</h3>
-								<p>Feedback from your coach in response to your proactive updates,required of each coaching client at least 2x a week to stay on track!</p>
-							</div>
-											<p><a class="btn btn-primary btn-outline with-arrow" href="https://rzp.io/l/month-diet-plan">Buy now <i class="icon-arrow-right"></i></a></p>
-
+                        <p><a class="btn btn-primary btn-outline with-arrow" href="{{ product.buyLink }}">Buy now<i class="icon-arrow-right"></i></a></p>
 						</div>
 					</div>
 				</div>
