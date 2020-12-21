@@ -13,7 +13,7 @@ class Service(models.Model):
     head3 = models.CharField(max_length=120, blank=True, null=True)
     desc3 = models.CharField(max_length=500, blank=True, null=True)
     buyLink = models.CharField(max_length=120, blank=True, null=True)
-    img = models.ImageField(blank=True, null=True)
-
+    img_card = models.ImageField(blank=True, null=True)
+    img_main = models.ImageField(blank=True, null=True)
     def __str__(self):
         return str(self.name)

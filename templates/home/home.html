@@ -1,8 +1,8 @@
 {% load static %}
 {% include 'base/base.html' %}
 {% block content %}
-    <div class="fh5co-loader"></div>
-	<div id="page">
+<div class="fh5co-loader"></div>
+<div id="page">
 	<nav class="fh5co-nav" role="navigation">
 		<div class="top-menu">
 			<div class="container">
@@ -17,10 +17,13 @@
 							<li><a href="{% url 'about' %}">About</a></li>
 							<li><a href="{% url 'contact' %}">Contact</a></li>
                             {% if request.user.is_authenticated %}
-                                <li class="btn-cta"><a href="{% url 'dashboard' %}">{{ users.first_name }}</a></li>
-                            {% else %}
+                                <li class="has-dropdown"><a href="{% url 'home' %}"> Hey, {{ user.first_name }}</a>
+									<ul class="dropdown">
+										<li><a href="{% url 'logout' %}">Logout</a></li>
+									</ul>
+								</li>
+							{% else %}
                                 <li class="btn-cta"><a href="{% url 'login' %}"><span>Login</span></a></li>
-                                <li class="btn-cta"><a href="{% url 'register' %}"><span>Register</span></a></li>
                             {% endif %}
 						</ul>
 					</div>

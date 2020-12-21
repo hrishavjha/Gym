@@ -546,6 +546,7 @@ h1, h2, h3, h4, h5, h6, figure {
   color: #fff;
   border: none !important;
   font-size: 18px;
+  font: -webkit-control;
 }
 #fh5co-header .display-tc .btn:hover,
 #fh5co-counter .display-tc .btn:hover,
