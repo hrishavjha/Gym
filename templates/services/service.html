@@ -18,8 +18,8 @@
                             {% if request.user.is_authenticated %}
                                 <li class="btn-cta"><a href="{% url 'dashboard' %}">{{ users.first_name }}</a></li>
                             {% else %}
-                                <li class="btn-cta"><a href="{% url 'login' %}"><span>Login</span></a></li>
-                                <li class="btn-cta"><a href="{% url 'register' %}"><span>Register</span></a></li>
+                                <li class="btn-cta"><a href="{% url 'login' %}?next={{request.path}}"><span>Login</span></a></li>
+                                <li class="btn-cta"><a href="{% url 'register' %}?next={{request.path}}"><span>Register</span></a></li>
                             {% endif %}
 						</ul>
 					</div>
