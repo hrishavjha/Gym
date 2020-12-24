@@ -67,6 +67,7 @@
 						<div class="form-group">
 							<p>Already registered? <a href="/login">Sign In</a></p>
 						</div>
+                        <input type="hidden" name="next" value="{{ request.GET.next }}">
 						<div class="form-group">
 							<input type="submit" value="Sign Up" class="btn btn-primary">
 						</div>

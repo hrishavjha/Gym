@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.contrib.auth.models import User
@@ -6,6 +7,7 @@ from .models import ExtendedUser
 
 
 def login_view(request):
+    valuenext= request.POST.get('next')
     if request.user.is_authenticated:
         return redirect('home')
     context = {
@@ -13,12 +15,13 @@ def login_view(request):
     }
     context = {
         'title': 'Login',
+        'valuenext': valuenext,
     }
     if request.method == "POST":
         user = auth.authenticate(username=request.POST['username'], password=request.POST['password'])
-        if user is not None:
+        if user is not None and valuenext != "":
             auth.login(request, user)
-            return redirect('home')
+            return redirect(valuenext)
         else:
             return render(request, "user/login.html", {"error": "Invalid Login Credentials."})
     else:
@@ -26,10 +29,12 @@ def login_view(request):
 
 
 def register_view(request):
+    valuenext = request.POST.get('next')
     if request.user.is_authenticated:
         return redirect('home')
     context = {
         'title': 'Register',
+        'valuenext': valuenext,
     }
     if request.method == "POST":
         password = request.POST.get('password')
@@ -44,7 +49,7 @@ def register_view(request):
                                                 last_name=request.POST['last_name'])
                 user.save()
                 ExtendedUser(user=user, ph_no=request.POST['phone']).save()
-                return redirect('login')
+                return redirect(valuenext)
         else:
             print("Password Not Matched")
             return render(request, 'user/register.html', {'error': 'Passwords dont match'})
