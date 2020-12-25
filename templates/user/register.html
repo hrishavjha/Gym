@@ -32,15 +32,17 @@
 		</div>
 	</nav>
 
-   <form action="" method="POST" class="fh5co-form animate-box" data-animate-effect="fadeIn">{% csrf_token %}
+   <form action="#" class="fh5co-form animate-box" data-animate-effect="fadeIn">
 						<h2>Sign Up</h2>
-<!--						<div class="form-group">-->
-<!--							<div class="alert alert-success" role="alert">Your info has been saved.</div>-->
-<!--						</div>-->
 						<div class="form-group">
+							<div class="alert alert-success" role="alert">Your info has been saved.</div>
+						</div>
+						<div class="form-group">
+							<label class="sr-only">Name</label>
 							<input  type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" autocomplete="off">
 						</div>
                         <div class="form-group">
+							<label class="sr-only">Name</label>
 							<input  type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" autocomplete="off">
 						</div>
 						<div class="form-group">
@@ -67,7 +69,7 @@
 						</div>
                         <input type="hidden" name="next" value="{{ request.GET.next }}">
 						<div class="form-group">
-							<button type="submit" class="btn btn-primary col-md-12 col-xs-12">Sign Up</button>
+							<input type="submit" value="Sign Up" class="btn btn-primary">
 						</div>
 					</form>
 
