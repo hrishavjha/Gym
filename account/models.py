@@ -3,7 +3,7 @@ from django.db import models
 
 
 class ExtendedUser(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     ph_no = models.CharField(max_length=10, blank=True, null=True)
 
     class Meta:
