@@ -3,10 +3,10 @@ from django.shortcuts import render
 from services.models import Service
 
 
-def prod_view(request, prod_id):
+def prod_view(request, slug):
     user = request.user
     try:
-        service = Service.objects.get(id=prod_id)
+        service = Service.objects.get(slug=slug)
     except:
         service = None
     allService = Service.objects.all()
