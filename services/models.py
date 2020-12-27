@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Service(models.Model):
+    slug = models.SlugField(max_length=20, blank=True, null=True)
     name = models.CharField(max_length=120, blank=True, null=True)
     price = models.IntegerField(blank=True, null=True)
     des = models.CharField(max_length=500, blank=True, null=True)
