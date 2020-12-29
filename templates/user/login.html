@@ -28,7 +28,6 @@
 						</ul>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</nav>
@@ -36,6 +35,11 @@
     <div class="login-form">
     <form action="" method="POST">{% csrf_token %}
         <h2 class="text-center">Log in</h2>
+        {% if error %}
+            <div class="error">
+                <p class="errorText">{{ error }}</p>
+            </div>
+        {% endif %}
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Username" name="username" id="username" required="required">
         </div>
