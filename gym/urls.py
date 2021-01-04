@@ -23,6 +23,10 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('dashboard/', dash_view, name='dashboard'),
     path('product/<slug>', prod_view, name='prod_detail'),
+    url('social-auth/', include('social_django.urls', namespace='social')),
+]
 
-    url(r'^oauth/', include('social_django.urls', namespace='social')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+

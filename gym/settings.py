@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
+# from config import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -55,7 +56,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # ADDED
     'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
@@ -73,7 +73,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                # ADDED
                 'social_django.context_processors.backends',
                 'social_django.context_processors.login_redirect',
             ],
@@ -82,12 +81,17 @@ TEMPLATES = [
 ]
 
 AUTHENTICATION_BACKENDS = (
-    'social_core.backends.github.GithubOAuth2',
-    'social_core.backends.twitter.TwitterOAuth',
     'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
 
     'django.contrib.auth.backends.ModelBackend',
 )
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'login'
+
 
 WSGI_APPLICATION = 'gym.wsgi.application'
 
@@ -100,6 +104,23 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# App ID
+SOCIAL_AUTH_FACEBOOK_KEY = "397491754661115"
+# App Secret
+SOCIAL_AUTH_FACEBOOK_SECRET = "96c56266ff97aedcb163947ca697f8f6"
+
+# SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_link']
+# SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+#   'fields': 'id, name, email, picture.type(large), link'
+# }
+# SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [
+#     ('name', 'name'),
+#     ('email', 'email'),
+#     ('picture', 'picture'),
+#     ('link', 'profile_url'),
+# ]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -140,7 +161,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 MEDIA_URL = '/media/'
 
-LOGOUT_REDIRECT_URL = '/'
+# LOGOUT_REDIRECT_URL = '/'

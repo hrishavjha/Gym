@@ -1,9 +1,24 @@
 {% load static %}
 {% include 'base/base.html' %}
 {% block content %}
-<div class="fh5co-loader"></div>
-<div id="page">
+    <title>Gymcounselor</title>
+    <div class="fh5co-loader"></div>
+	<div id="page">
 	<nav class="fh5co-nav" role="navigation">
+	    <div class="top">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 text-right">
+						<ul class="fh5co-social">
+							<li><a href="https://www.instagram.com/gymcounselor/"><i class="icon-instagram"></i></a></li>
+							<li><a href="https://www.facebook.com/gymcounselor"><i class="icon-facebook"></i></a></li>
+							<li><a href="https://www.youtube.com/channel/UChvRw7rp9-gX00EpiCoMDNg"><i class="icon-youtube"></i></a></li>
+							<li><a href="https://www.linkedin.com/company/gymcounselor/"><i class="icon-linkedin"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="top-menu">
 			<div class="container">
 				<div class="row">
@@ -12,20 +27,28 @@
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
-							<!-- <li class="active"><a href="index.html">Home</a></li> -->
-							<li><a href="{% url 'work' %}">Work</a></li>
+							<!--<li><a href="{% url 'work' %}">Work</a></li>-->
 							<li><a href="{% url 'about' %}">About</a></li>
 							<li><a href="{% url 'contact' %}">Contact</a></li>
-                            {% if request.user.is_authenticated %}
-                                <li class="has-dropdown"><a href="{% url 'home' %}"> Hey, {{ user.first_name }}</a>
+
+						    <li class="has-dropdown"><a>Services</a>
+							{% for s in service %}
+							   <ul class="dropdown">
+							        <li><a href="{% url 'prod_detail' s.slug %}">{{ s.name }}</a></li>
+							   </ul>
+							   {% endfor %}
+							</li>
+
+							{% if request.user.is_authenticated %}
+                            <li class="has-dropdown"><a> Hey, {{ user.first_name }}</a>
 									<ul class="dropdown">
 										<li><a href="{% url 'logout' %}">Logout</a></li>
 									</ul>
-								</li>
+							</li>
 							{% else %}
-                                <li class="btn-cta"><a href="{% url 'login' %}"><span>Login</span></a></li>
+                                <li class="btn-cta"><a href="{% url 'login' %}?next={{request.path}}"><span>Login</span></a></li>
                             {% endif %}
-						</ul>
+                        </ul>
 					</div>
 				</div>
 
@@ -41,7 +64,7 @@
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1>Making the Future of Fitness Easy and Accessible</h1>
-							<p><a href="#" class="btn btn-primary btn-lg with-arrow">View Our Work</a></p>
+							<p><a href="{% url 'register' %}?next={{request.path}}" class="btn btn-default btn-lg">Get Free Consultation</a></p>
 						</div>
 					</div>
 				</div>
@@ -56,15 +79,17 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="project-content">
 			{% for s in service %}
                 <div class="col-forth">
-                    <div class="project animate-box" style="background-image: url('../../media/{{ s.img }}')">
-                        <a href="{% url 'prod_detail' s.slug %}" class="desc">
-                            <span>{{ s.des }}</span>
-                            <h3>{{ s.name }}</h3>
-                        </a>
-                    </div>
+                        <div class="project animate-box" style="background-image: url('../../media/{{ s.img_card }}')">
+                                <a href="{% url 'prod_detail' s.slug %}" class="desc">
+                                 <span>Get the Results you always Wanted</span>
+                                 <h3>{{ s.name }}</h3>
+                                </a>
+                            </div>
+                <p style="text-align:center;" ><a class="btn btn-primary btn-outline " href="{% url 'prod_detail' s.slug %}">Start a Free Trial</a></p>
                 </div>
             {% endfor %}
 		</div>
@@ -120,13 +145,13 @@
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Lets Get Started</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					<h2> Our Newsletter</h2>
+					<p>Sign up for a regular digital update. What you will get: Weekly updates of Exciting Recipes for PCOS Diet, Access to our Live Sessions Conducted by Experts in the industry</p>
 				</div>
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center">
-					<p><a href="#" class="btn btn-default btn-lg">Get in Touch</a></p>
+					<p><a href="{% url 'login' %}?next={{request.path}}" class="btn btn-default btn-lg">Subscribe</a></p>
 				</div>
 			</div>
 		</div>
@@ -145,12 +170,6 @@
 						<h3>Lakshmi</h3>
 						<strong class="role">M.Sc(Clinical Nutrition),<br> Specializes in long term weight management.</strong>
 						<p>Passionate about nutrition and an expert in evaluating the dietary needs of a client Lakshmi has an inclination towards empowering others by understanding their symptoms, their bodies, and how even small diet and lifestyle changes can yield a more healthful, vibrant life in time. She is highly skilled in various fields of diet planning, nutrition counseling, management, public speaking, and healthcare.</p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-							<li><a href="#"><i class="icon-github"></i></a></li>
-						</ul>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
@@ -158,13 +177,7 @@
 						<img src="{% static 'images/Siddharth.png' %}">
 						<h3>Dr. Siddharth baidya</h3>
 						<strong class="role">Orthopedic Surgeon,<br>Specialty Sports Injury</strong>
-						<p>Co-founder of GymCounselor, Dr. Sidharth Baidya​ holds a Specialization in Sport Injury from MGMC&H, WEST BENGAL. In his vast experience of 8 years in the Fields of Medical and Orthopedics Sidharth has worked with multiple clients and patients and has taught several courses in places like Korea and India to name a few.</p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-							<li><a href="#"><i class="icon-github"></i></a></li>
-						</ul>
+						<p>Co-founder of GymCounselor, Dr. Sidharth Baidya holds a Specialization in Sport Injury from MGMC&H, WEST BENGAL. In his vast experience of 8 years in the Fields of Medical and Orthopedics Sidharth has worked with multiple clients and patients and has taught several courses in places like Korea and India to name a few.</p>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
@@ -173,12 +186,6 @@
 						<h3>Rajnish</h3>
 						<strong class="role">Chief Of Exercise Sciences,<br>Certified Fitness and Nutrition Consultant (CPT)</strong>
 						<p>A Fitness and Nutrition Consultant certified by Scientific Training Fitness Academy and Currently one of the Faculty Members. I have worked on individual clients and have successfully helped them achieve their goals. Along with tailor made diet plan and customized exercise schedule, my clients reach their goals faster and in healthier fashion.</p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-							<li><a href="#"><i class="icon-github"></i></a></li>
-						</ul>
 					</div>
 				</div>
 		</div>
@@ -193,11 +200,9 @@
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
 					<ul class="fh5co-footer-links">
-						<li><a href="#">About</a></li>
-						<li><a href="#">Help</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="/about">About</a></li>
+						<li><a href="/contact">Help</a></li>
 						<li><a href="#">Terms</a></li>
-						<li><a href="#">Meetups</a></li>
 					</ul>
 				</div>
 
@@ -206,8 +211,6 @@
 						<li><a href="#">Shop</a></li>
 						<li><a href="#">Privacy</a></li>
 						<li><a href="#">Testimonials</a></li>
-						<li><a href="#">Handbook</a></li>
-						<li><a href="#">Held Desk</a></li>
 					</ul>
 				</div>
 			</div>
@@ -215,15 +218,14 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2020 GC.com</small>
-						<small class="block">Designed by </small>
+						<small class="block">&copy; 2020 gymcounselor.com<br> All Rights Reserved.</small>
 					</p>
 					<p>
 						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href="https://www.instagram.com/gymcounselor/"><i class="icon-instagram"></i></a></li>
+							<li><a href="https://www.facebook.com/gymcounselor"><i class="icon-facebook"></i></a></li>
+							<li><a href="https://www.youtube.com/channel/UChvRw7rp9-gX00EpiCoMDNg"><i class="icon-youtube"></i></a></li>
+							<li><a href="https://www.linkedin.com/company/gymcounselor/"><i class="icon-linkedin"></i></a></li>
 						</ul>
 					</p>
 				</div>
@@ -231,7 +233,7 @@
 		</div>
 	</footer>
 	</div>
-
+</div>
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>

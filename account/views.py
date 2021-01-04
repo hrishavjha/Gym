@@ -7,7 +7,7 @@ from .models import ExtendedUser
 
 
 def login_view(request):
-    valuenext= request.POST.get('next')
+    valuenext = request.POST.get('next')
     if request.user.is_authenticated:
         return redirect('home')
     context = {

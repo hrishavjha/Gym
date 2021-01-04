@@ -11,5 +11,5 @@ def dash_view(request):
             'title': 'Dashboard',
             'user': request.user,
         }
-        return render(request, 'dashboard/dash.html', context_one)
-    return redirect('/')
+    return render(request, 'dashboard/dash.html', context_one)
+    # return redirect('/')
